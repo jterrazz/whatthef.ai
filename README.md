@@ -1,3 +1,3 @@
-# wtf-github-pull-request
+# WhatTheF.AI
 
-An assistant for reviewing pull requests
+> Elevate your browsing game with WhatTheF.AI - the AI-powered assistant that simplifies your life.
