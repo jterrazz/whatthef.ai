@@ -1,6 +1,8 @@
 import { readGithubCodeChangeOpenAiFactory } from '../read-github-code-change.open-ai'
+import { createMock } from 'ts-auto-mock'
+import { OpenAiClient } from '../open-ai-client'
 
-const mockOfOpenAiClient = createMock()
+const mockOfOpenAiClient = createMock<OpenAiClient>()
 const readGithubCodeChangeOpenAi = readGithubCodeChangeOpenAiFactory(mockOfOpenAiClient)
 
 describe('readGithubCodeChangeOpenAi()', () => {
@@ -12,12 +14,12 @@ describe('readGithubCodeChangeOpenAi()', () => {
     }
 
     // When
-    const readerAssistant = readGithubCodeChangeOpenAi(githubCodeChange)
+    const readerAssistant = await readGithubCodeChangeOpenAi(githubCodeChange)
 
     // Then
     expect(readerAssistant).toEqual({
-      title: 'string',
-      description: 'string',
+      title: '',
+      description: '',
       confidence: 1,
     })
   })
